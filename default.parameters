@@ -1,0 +1,14 @@
+-ds_folder  /media/Recerca/ISEDU/Master/Modul5/2014-15/Project/Proposal_2015/datasets/
+-ds_name  Dummy/pascal
+-out_folder /media/Recerca/ISEDU/Master/Modul5/2014-15/Project/Proposal_2015/OutputFinal_descriptors/
+-test_folder testing
+-c_descriptor
+-keypoints surf
+-t_svm
+-d surf
+-k 100
+-npt 200
+-classifier knn
+-c_vocabulary
+-c_assignment
+

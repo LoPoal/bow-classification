@@ -1,0 +1,16 @@
+-ds_folder /home/1216548/master_data/module5/datasets/
+-ds_name  Full/pascal
+-out_folder out/
+-test_folder testing
+-c_descriptor
+-keypoints surf
+-t_svm
+-d sift surf lbp_color
+-k 500
+-npt 400
+-classifier svm
+-c_vocabulary
+-c_assignment
+-m_strategy OneVsAll
+-fusion late
+-parallel

@@ -1,0 +1,23 @@
+#!/bin/env python
+
+import sys, subprocess, shlex, glob
+sys.path.append('.')
+
+def run(command, output = None, error_output = None):
+    proc = subprocess.Popen(shlex.split(command), stdout = output, stderr = error_output)
+    proc.communicate()
+    if proc.returncode != 0:
+        raise ValueError, "Command '%s' has failed." % command
+
+if __name__ == '__main__':
+    # Cluster launch information ..................................................................
+    cluster_queue = 'fast.master.q'
+    memory = '8.4G'
+    # Task information ............................................................................
+    out_dir  = '~/Master/'
+    launcher_name = 'mcv_m5_image_classification_train.py'
+    
+    
+    cmd = "qsub -S /usr/bin/python -cwd -V -q %s -l mem_token=%s,mem_free=%s -o %s -e %s %s" % (cluster_queue, memory, memory, out_dir, out_dir, launcher_name)
+    print cmd
+    run(cmd)

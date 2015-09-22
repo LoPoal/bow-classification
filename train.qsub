@@ -1,0 +1,9 @@
+# SEG submission options 
+#$ -q fast.master.q 
+#$ -o log/
+#$ -e log/
+#$ -cwd 
+#$ -N mcv_m5_image_classification_train 
+#$ -l mem_token=9G,mem_free=9G
+
+python mcv_m5_image_classification_train.py custom.parameters
